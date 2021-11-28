@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.test.intuitindia.viewmodel.CatCardViewModel" />
+
+        <import type="com.test.intuitindia.R" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_cat"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp300"
+            android:scaleType="fitXY"
+            app:imageUrl="@{viewModel.imageUrlObservable}"
+            app:placeHolder="@{R.drawable.ic_launcher_background}"
+            tools:src="@drawable/ic_launcher_background" />
+    </androidx.cardview.widget.CardView>
+</layout>
